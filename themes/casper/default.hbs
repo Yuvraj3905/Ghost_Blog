@@ -3,12 +3,14 @@
 <head>
 
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
-    <title>{{meta_title}}</title>
+    <title>Medlr</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+      <link rel="icon" type="image/jpg" href="./assets/Medlr.jpeg" />
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
@@ -16,19 +18,27 @@
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
-
+    <style type='text/css'>
+    /* Hide the Membership aka Subscribe actions etc. */
+    #ghost-portal-root,
+    a[href^="https://ghost.org"],
+    a[href^="#/portal/signup"],
+    .footer-cta { display: none; }
+</style>
 </head>
 <body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
+    <header id="gh-head" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}} " style="background-color:#1D4042">
         <div class="gh-head-inner inner">
             <div class="gh-head-brand">
                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
                     {{#if @site.logo}}
+                        
                         <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
-                        {{@site.title}}
+                        <h2>Medlr</h2>
+                        {{!-- {{@site.title}} --}}
                     {{/if}}
                 </a>
                 <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
@@ -74,9 +84,10 @@
     </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer" style="background-color:#1e566b">
+    <footer class="site-footer outer" style="background-color:
+#1D4042">
         <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">Medler</a> &copy; {{date format="YYYY"}}</section>
+            <section class="copyright"><a href="{{@site.url}}">Medlr</a> &copy; {{date format="YYYY"}}</section>
             {{!-- <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav> --}}
