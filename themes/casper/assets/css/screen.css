@@ -44,15 +44,13 @@ production stylesheet in assets/built/screen.css
   --color-border: #e1e1e1;
   --color-wash: #e5eff5;
   --color-darkmode: #151719;
-  
-  
-  /*
-    An accent color is also set by Ghost itself in
-    Ghost Admin > Settings > Brand
 
-    --ghost-accent-color: {value};
+  /* An accent color is also set by Ghost itself in
+    Ghost Admin > Settings > Brand */
 
-    You can use this variable throughout your styles
+  --ghost-accent-color: lightblue;
+
+  /* You can use this variable throughout your styles
      */
 
   /* Fonts */
